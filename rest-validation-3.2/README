@@ -1,0 +1,8 @@
+This is an example application of my blog post:
+
+Spring from the Trenches: Adding Validation to a REST API - Not published yet.
+
+
+RUNNING THE APPLICATION:
+
+- Run command mvn clean jetty:run
