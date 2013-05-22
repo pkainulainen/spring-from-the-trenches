@@ -18,7 +18,6 @@ import org.springframework.web.servlet.view.JstlView;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = {
-        "net.petrikainulainen.spring.trenches.common",
         "net.petrikainulainen.spring.trenches.comment.controller"
 })
 @Import({MessageContext.class, TestMessageContext.class})
