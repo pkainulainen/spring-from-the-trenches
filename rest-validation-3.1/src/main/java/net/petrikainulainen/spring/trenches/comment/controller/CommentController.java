@@ -2,11 +2,11 @@ package net.petrikainulainen.spring.trenches.comment.controller;
 
 import net.petrikainulainen.spring.trenches.comment.dto.CommentDTO;
 import net.petrikainulainen.spring.trenches.comment.dto.ValidationErrorDTO;
-import net.petrikainulainen.spring.trenches.common.util.LocaleContextHolderWrapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -26,13 +26,10 @@ public class CommentController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(CommentController.class);
 
-    private LocaleContextHolderWrapper localeWrapper;
-
     private MessageSource messageSource;
 
     @Autowired
-    public CommentController(LocaleContextHolderWrapper localeWrapper, MessageSource messageSource) {
-        this.localeWrapper = localeWrapper;
+    public CommentController(MessageSource messageSource) {
         this.messageSource = messageSource;
     }
 
@@ -57,7 +54,7 @@ public class CommentController {
     }
 
     private ValidationErrorDTO processFieldErrors(List<FieldError> fieldErrors) {
-        Locale currentLocale = localeWrapper.getCurrentLocale();
+        Locale currentLocale =  LocaleContextHolder.getLocale();
 
         ValidationErrorDTO dto = new ValidationErrorDTO();
 
