@@ -68,37 +68,15 @@ public class CommentController {
     }
 
     private String resolveLocalizedErrorMessage(FieldError fieldError, Locale locale) {
-        String localizedErrorMessage = null;
-
-        String[] fieldErrorCodes = fieldError.getCodes();
-        for (int index = 0; index < fieldErrorCodes.length; index++) {
-            String fieldErrorCode = fieldErrorCodes[index];
-            LOGGER.debug("Finding localized message with code: {} and locale: {}", fieldErrorCode, locale);
-
-            localizedErrorMessage = getMessageForCode(fieldErrorCode, fieldError.getArguments(), locale);
-            LOGGER.debug("Found message: {}", localizedErrorMessage);
-
-            if (localizedErrorMessage != null) {
-                LOGGER.debug("Message: {} is valid. Returning message.", localizedErrorMessage);
-                break;
-            }
-        }
+        String localizedErrorMessage = messageSource.getMessage(fieldError, locale);
 
         //If a message was not found, return the most accurate field error code instead.
-        if (localizedErrorMessage == null) {
+        //You can remove this check if you prefer to get the default error message.
+        if (localizedErrorMessage.equals(fieldError.getDefaultMessage())) {
+            String[] fieldErrorCodes = fieldError.getCodes();
             localizedErrorMessage = fieldErrorCodes[0];
         }
 
         return localizedErrorMessage;
-    }
-
-    private String getMessageForCode(String code, Object[] params, Locale locale) {
-        String message = messageSource.getMessage(code, params, locale);
-
-        if (message != null && message.equals(code)) {
-            message = null;
-        }
-
-        return message;
     }
 }
