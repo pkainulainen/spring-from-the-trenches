@@ -54,12 +54,10 @@ public class CommentController {
     }
 
     private ValidationErrorDTO processFieldErrors(List<FieldError> fieldErrors) {
-        Locale currentLocale =  LocaleContextHolder.getLocale();
-
         ValidationErrorDTO dto = new ValidationErrorDTO();
 
         for (FieldError fieldError: fieldErrors) {
-            String localizedErrorMessage = resolveLocalizedErrorMessage(fieldError, currentLocale);
+            String localizedErrorMessage = resolveLocalizedErrorMessage(fieldError);
             LOGGER.debug("Adding error message: {} to field: {}", localizedErrorMessage, fieldError.getField());
             dto.addFieldError(fieldError.getField(), localizedErrorMessage);
         }
@@ -67,8 +65,9 @@ public class CommentController {
         return dto;
     }
 
-    private String resolveLocalizedErrorMessage(FieldError fieldError, Locale locale) {
-        String localizedErrorMessage = messageSource.getMessage(fieldError, locale);
+    private String resolveLocalizedErrorMessage(FieldError fieldError) {
+        Locale currentLocale =  LocaleContextHolder.getLocale();
+        String localizedErrorMessage = messageSource.getMessage(fieldError, currentLocale);
 
         //If a message was not found, return the most accurate field error code instead.
         //You can remove this check if you prefer to get the default error message.
