@@ -1,6 +1,7 @@
 This is an example application of my blog post:
 
-Spring from the Trenches: title under work.
+Spring from the Trenches: Using Environment Specific Cron Expressions with the @Scheduled Annotation
+http://www.petrikainulainen.net/programming/spring-framework/spring-from-the-trenches-using-environment-specific-cron-expressions-with-the-scheduled-annotation/
 
 RUNNING THE APPLICATION:
 
