@@ -1,0 +1,13 @@
+This is an example application of my blog post:
+
+Spring from the Trenches: Invoking a Protected Method From a Scheduled Job
+
+TBD.
+
+RUNNING THE APPLICATION:
+
+You can run the application by running the following command at command prompt:
+
+mvn clean jetty:run -P dev (development profile)
+mvn clean jetty:run -P prod (production profile)
+
