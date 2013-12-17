@@ -40,6 +40,10 @@ final class AuthenticationUtil {
     private static final String PASSWORD = "password";
     private static final String USERNAME = "user";
 
+    //Ensures that this class cannot be instantiated
+    private AuthenticationUtil() {
+    }
+
     /**
      * Removes the authentication from the security context. This method must
      * be called after the job has been run.
