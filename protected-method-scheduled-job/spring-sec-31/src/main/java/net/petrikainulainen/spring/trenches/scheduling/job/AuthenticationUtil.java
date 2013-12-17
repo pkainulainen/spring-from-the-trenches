@@ -5,7 +5,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.User;
 
 import java.util.Collection;
 
@@ -37,7 +36,6 @@ import java.util.Collection;
  */
 final class AuthenticationUtil {
 
-    private static final String PASSWORD = "password";
     private static final String USERNAME = "user";
 
     //Ensures that this class cannot be instantiated
@@ -59,8 +57,11 @@ final class AuthenticationUtil {
      */
     static void configureAuthentication(String role) {
         Collection<GrantedAuthority> authorities = AuthorityUtils.createAuthorityList(role);
-        User principal = new User(USERNAME, PASSWORD, authorities);
-        Authentication authentication = new UsernamePasswordAuthenticationToken(principal, "", authorities);
+        Authentication authentication = new UsernamePasswordAuthenticationToken(
+                USERNAME,
+                role,
+                authorities
+        );
         SecurityContextHolder.getContext().setAuthentication(authentication);
     }
 }

@@ -9,10 +9,12 @@ import org.springframework.scheduling.config.ScheduledTaskRegistrar;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.concurrent.DelegatingSecurityContextScheduledExecutorService;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 
+import java.util.Collection;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -29,7 +31,6 @@ import java.util.concurrent.ScheduledExecutorService;
 @PropertySource("classpath:application.properties")
 public class ExampleApplicationContext implements SchedulingConfigurer {
 
-    private static final String PASSWORD = "password";
     private static final String ROLE = "ROLE_USER";
     private static final String USERNAME = "user";
 
@@ -47,10 +48,12 @@ public class ExampleApplicationContext implements SchedulingConfigurer {
 
     private SecurityContext createSchedulerSecurityContext() {
         SecurityContext context = SecurityContextHolder.createEmptyContext();
+
+        Collection<GrantedAuthority> authorities = AuthorityUtils.createAuthorityList(ROLE);
         Authentication authentication = new UsernamePasswordAuthenticationToken(
                 USERNAME,
-                PASSWORD,
-                AuthorityUtils.createAuthorityList(ROLE)
+                ROLE,
+                authorities
         );
         context.setAuthentication(authentication);
 
