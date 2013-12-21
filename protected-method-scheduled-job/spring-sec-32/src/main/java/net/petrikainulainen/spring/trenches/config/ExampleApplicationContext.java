@@ -27,7 +27,7 @@ import java.util.concurrent.ScheduledExecutorService;
 @ComponentScan(basePackages = {
         "net.petrikainulainen.spring.trenches.scheduling"
 })
-@ImportResource("classpath:applicationContext-security.xml")
+@Import(ExampleSecurityContext.class)
 @PropertySource("classpath:application.properties")
 public class ExampleApplicationContext implements SchedulingConfigurer {
 
