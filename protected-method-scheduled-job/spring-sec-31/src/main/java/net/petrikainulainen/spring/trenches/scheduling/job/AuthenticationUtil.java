@@ -34,7 +34,7 @@ import java.util.Collection;
  * which requires access to protected methods.
  * @author Petri Kainulainen
  */
-final class AuthenticationUtil {
+public final class AuthenticationUtil {
 
     private static final String USERNAME = "user";
 
@@ -46,7 +46,7 @@ final class AuthenticationUtil {
      * Removes the authentication from the security context. This method must
      * be called after the job has been run.
      */
-    static void clearAuthentication() {
+    public static void clearAuthentication() {
         SecurityContextHolder.getContext().setAuthentication(null);
     }
 
@@ -55,7 +55,7 @@ final class AuthenticationUtil {
      * be called before the job is run.
      * @param role  The role which is granted to the created Authentication object.
      */
-    static void configureAuthentication(String role) {
+    public static void configureAuthentication(String role) {
         Collection<GrantedAuthority> authorities = AuthorityUtils.createAuthorityList(role);
         Authentication authentication = new UsernamePasswordAuthenticationToken(
                 USERNAME,
