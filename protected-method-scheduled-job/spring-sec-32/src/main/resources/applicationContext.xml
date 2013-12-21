@@ -7,6 +7,7 @@
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
        http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.2.xsd">
 
+    <!-- This application context configuration is NOT working at the moment! -->
     <context:property-placeholder location="classpath:application.properties" ignore-resource-not-found="false"/>
 
     <context:annotation-config/>

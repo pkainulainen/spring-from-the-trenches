@@ -17,6 +17,7 @@ public class ExampleApplicationConfig implements WebApplicationInitializer {
         AnnotationConfigWebApplicationContext rootContext = new AnnotationConfigWebApplicationContext();
         rootContext.register(ExampleApplicationContext.class);
 
+        //The XML configuration is not working at the moment!
         //XmlWebApplicationContext rootContext = new XmlWebApplicationContext();
         //rootContext.setConfigLocation("classpath:applicationContext.xml");
 
