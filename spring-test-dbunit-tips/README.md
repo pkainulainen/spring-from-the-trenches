@@ -1,7 +1,7 @@
 This is the example application of my blog posts:
 
-* Spring from the Trenches: Using Null Values in DbUnit Data Sets (not published yet)
-* Spring from the Trenches: Resetting Autoincrement Columns Before Each Test Case (not published yet)
+* [Spring from the Trenches: Using Null Values in DbUnit Data Sets](http://www.petrikainulainen.net/programming/spring-framework/spring-from-the-trenches-using-null-values-in-dbunit-datasets/)
+* [Spring from the Trenches: Resetting Autoincrement Columns Before Each Test Method](http://www.petrikainulainen.net/programming/spring-framework/spring-from-the-trenches-resetting-auto-increment-columns-before-each-test-method/)
 
 If you don't know how you can write integration tests for Spring Data JPA repositories, 
 You should read a blog post titled: [Spring Data JPA Tutorial: Integration Testing](http://www.petrikainulainen.net/programming/spring-framework/spring-data-jpa-tutorial-integration-testing/).
