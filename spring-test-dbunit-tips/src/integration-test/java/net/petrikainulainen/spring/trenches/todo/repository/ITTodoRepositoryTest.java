@@ -49,7 +49,7 @@ public class ITTodoRepositoryTest {
 
     @Before
     public void setUp() throws SQLException {
-        DbTestUtil.invokeSql(applicationContext, "todos");
+        DbTestUtil.resetAutoIncrementColumns(applicationContext, "todos");
     }
 
     @Test
