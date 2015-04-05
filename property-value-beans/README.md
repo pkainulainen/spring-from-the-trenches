@@ -1,6 +1,6 @@
 This blog post is the example application of the blog post:
 
-* [Spring from the Trenches: Configuration Properties Bean]()
+* [Spring from the Trenches: Injecting Property Values Into Configuration Beans](http://www.petrikainulainen.net/programming/spring-framework/spring-from-the-trenches-injecting-property-values-into-configuration-beans/)
 
 Prerequisites
 =============
