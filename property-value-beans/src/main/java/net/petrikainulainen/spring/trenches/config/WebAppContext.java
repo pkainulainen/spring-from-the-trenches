@@ -20,7 +20,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 public class WebAppContext {
 
     @Bean
-    PropertySourcesPlaceholderConfigurer propertyPlaceHolderConfigurer() {
+    static PropertySourcesPlaceholderConfigurer propertyPlaceHolderConfigurer() {
         return new PropertySourcesPlaceholderConfigurer();
     }
 }
