@@ -1,6 +1,7 @@
 package net.petrikainulainen.spring.trenches.web;
 
 import net.petrikainulainen.spring.trenches.config.ApplicationProperties;
+import net.petrikainulainen.spring.trenches.config.GitProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,9 +22,12 @@ final class PropertiesController {
 
     private final ApplicationProperties applicationProperties;
 
+    private final GitProperties gitProperties;
+
     @Autowired
-    PropertiesController(ApplicationProperties applicationProperties) {
+    PropertiesController(ApplicationProperties applicationProperties, GitProperties gitProperties) {
         this.applicationProperties = applicationProperties;
+        this.gitProperties = gitProperties;
     }
 
     /**
@@ -34,5 +38,11 @@ final class PropertiesController {
     ApplicationProperties getAppConfiguration() {
         LOGGER.info("Returning application configuration.");
         return applicationProperties;
+    }
+
+    @RequestMapping(value = "/version", method = RequestMethod.GET)
+    GitProperties getVersion() {
+        LOGGER.info("Returning version information.");
+        return gitProperties;
     }
 }

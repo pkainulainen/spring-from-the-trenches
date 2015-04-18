@@ -2,6 +2,7 @@ This blog post is the example application of the blog post:
 
 * [Spring From the Trenches: Injecting Property Values Into Configuration Beans](http://www.petrikainulainen.net/programming/spring-framework/spring-from-the-trenches-injecting-property-values-into-configuration-beans/)
 * [Spring From the Trenches: Returning Runtime Configuration as JSON](http://www.petrikainulainen.net/programming/spring-framework/spring-from-the-trenches-returning-runtime-configuration-as-json/)
+* [Spring From the Trenches: Returning Git Commit Information as JSON]()
 
 Prerequisites
 =============
@@ -28,3 +29,7 @@ You can run the application by using the following command:
 You can get the runtime configuration of the application by sending a GET request to the url:
 
     http://localhost:8080/config
+    
+You can get the Git commit information by sending a GET request to the url:
+
+    http://localhost:8080/version
