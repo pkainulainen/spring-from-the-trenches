@@ -2,7 +2,7 @@ This blog post is the example application of the blog post:
 
 * [Spring From the Trenches: Injecting Property Values Into Configuration Beans](http://www.petrikainulainen.net/programming/spring-framework/spring-from-the-trenches-injecting-property-values-into-configuration-beans/)
 * [Spring From the Trenches: Returning Runtime Configuration as JSON](http://www.petrikainulainen.net/programming/spring-framework/spring-from-the-trenches-returning-runtime-configuration-as-json/)
-* [Spring From the Trenches: Returning Git Commit Information as JSON]()
+* [Spring From the Trenches: Returning Git Commit Information as JSON](http://www.petrikainulainen.net/programming/spring-framework/spring-from-the-trenches-returning-git-commit-information-as-json/)
 
 Prerequisites
 =============
