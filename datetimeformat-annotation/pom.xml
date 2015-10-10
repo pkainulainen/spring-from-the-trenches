@@ -5,7 +5,6 @@
     <artifactId>datetimeformat-annotation</artifactId>
     <version>0.1</version>
     <name>Spring From the Trenches: The @DateTimeFormat Annotation</name>
-    <packaging>war</packaging>
     <description>
     </description>
 
