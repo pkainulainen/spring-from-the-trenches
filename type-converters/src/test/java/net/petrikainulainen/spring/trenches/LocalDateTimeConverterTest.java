@@ -40,8 +40,8 @@ public class LocalDateTimeConverterTest {
 
             @Test
             public void shouldReturnNull() {
-                LocalDateTime date = converter.convert(null);
-                assertThat(date).isNull();
+                LocalDateTime dateAndTime = converter.convert(null);
+                assertThat(dateAndTime).isNull();
             }
         }
 
@@ -52,8 +52,8 @@ public class LocalDateTimeConverterTest {
 
             @Test
             public void shouldReturnExpectedDate() {
-                LocalDateTime date = converter.convert(DATE_TIME_STRING);
-                assertThat(date).isEqualTo(EXPECTED_DATE_TIME);
+                LocalDateTime dateAndTime = converter.convert(DATE_TIME_STRING);
+                assertThat(dateAndTime).isEqualTo(EXPECTED_DATE_TIME);
             }
         }
 
