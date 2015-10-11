@@ -39,7 +39,7 @@ public final class LocalDateTimeConverter implements Converter<String, LocalDate
                 dateFormat
         );
 
-        if (source == null) {
+        if (source == null || source.isEmpty()) {
             LOGGER.trace("The source string is null. Returning null.");
             return null;
         }

@@ -27,6 +27,15 @@ public class LocalDateTimeConverterTest {
             converter = new LocalDateTimeConverter(ISO_DATE_TIME_FORMAT);
         }
 
+        public class WhenSourceStringIsEmpty {
+
+            @Test
+            public void shouldReturnNull() {
+                LocalDateTime dateAndTime = converter.convert("");
+                assertThat(dateAndTime).isNull();
+            }
+        }
+
         public class WhenSourceStringIsNull {
 
             @Test

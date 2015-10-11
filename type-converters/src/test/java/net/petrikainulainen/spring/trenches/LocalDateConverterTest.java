@@ -27,6 +27,15 @@ public class LocalDateConverterTest {
             converter = new LocalDateConverter(ISO_DATE_FORMAT);
         }
 
+        public class WhenSourceStringIsEmpty {
+
+            @Test
+            public void shouldReturnNull() {
+                LocalDate date = converter.convert("");
+                assertThat(date).isNull();
+            }
+        }
+
         public class WhenSourceStringIsNull {
 
             @Test
