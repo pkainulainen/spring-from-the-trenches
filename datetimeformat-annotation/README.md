@@ -1,6 +1,6 @@
 This blog post is the example application of the blog post:
 
-* [Spring From the Trenches: Using the @DateTimeFormat Annotation With the @RequestParam Annotation]() - not published yet
+* [Spring From the Trenches: Parsing Date and Time Information From a Request Parameter](http://www.petrikainulainen.net/programming/spring-framework/spring-from-the-trenches-parsing-date-and-time-information-from-a-request-parameter/)
 
 Prerequisites
 =============
