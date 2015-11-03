@@ -1,6 +1,6 @@
 This blog post is the example application of the blog post:
 
-* [Spring From the Trenches: Using Type Converters With Spring MVC]() - not published yet
+* [Spring From the Trenches: Using Type Converters With Spring MVC](http://www.petrikainulainen.net/programming/spring-framework/spring-from-the-trenches-using-type-converters-with-spring-mvc/) 
 
 Prerequisites
 =============
