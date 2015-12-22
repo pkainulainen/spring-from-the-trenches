@@ -1,6 +1,6 @@
 This blog post is the example application of the blog post:
 
-* [Spring From the Trenches: Creating PDFs With Wkhtmltopdf]() - Not published yet
+* [Spring From the Trenches: Creating PDF Documents With Wkhtmltopdf](http://www.petrikainulainen.net/programming/spring-framework/spring-from-the-trenches-creating-pdf-documents-with-wkhtmltopdf/)
 
 *Note:* This example application (and the blog post) is based on the ideas of [Kyösti Herrala](https://www.linkedin.com/in/kherrala)
 
