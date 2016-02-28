@@ -11,6 +11,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import static info.solidsoft.mockito.java8.AssertionMatcher.assertArg;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -56,7 +57,7 @@ public class DateTimeControllerTest {
             );
 
             verify(dateTimeService, times(1)).processDate(assertArg(
-                    date -> date.equals(LocalDate.of(2015, 9, 26))
+                    date -> assertTrue(date.equals(LocalDate.of(2015, 9, 26)))
             ));
         }
     }
@@ -83,7 +84,7 @@ public class DateTimeControllerTest {
             );
 
             verify(dateTimeService, times(1)).processDateAndTime(assertArg(
-                    dateAndTime -> dateAndTime.equals(LocalDateTime.of(2015, 9, 26, 1, 30))
+                    dateAndTime -> assertTrue(dateAndTime.equals(LocalDateTime.of(2015, 9, 26, 1, 30)))
             ));
         }
     }
